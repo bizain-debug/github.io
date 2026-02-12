@@ -1,0 +1,138 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  background: #f8f9fa;
+  color: #222;
+  transition: 0.3s;
+}
+
+body.dark {
+  background: #121212;
+  color: #e0e0e0;
+}
+
+.header {
+  background: #1e1e2f;
+  color: white;
+  padding: 1rem 2rem;
+}
+
+.nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.nav-menu {
+  list-style: none;
+  display: flex;
+  gap: 1rem;
+}
+
+.nav-menu a {
+  color: white;
+  text-decoration: none;
+}
+
+.theme-toggle {
+  font-size: 1.2rem;
+  background: none;
+  border: none;
+  color: white;
+  cursor: pointer;
+}
+
+.hero {
+  padding: 3rem 2rem;
+  text-align: center;
+}
+
+.btn-primary {
+  display: inline-block;
+  margin-top: 1rem;
+  padding: 0.7rem 1.2rem;
+  background: #4f46e5;
+  color: white;
+  text-decoration: none;
+  border-radius: 6px;
+}
+
+.education, .platform {
+  padding: 3rem 2rem;
+  text-align: center;
+}
+
+.video-wrapper {
+  margin: 1rem auto;
+  max-width: 800px;
+  aspect-ratio: 16 / 9;
+}
+
+.video-wrapper iframe {
+  width: 100%;
+  height: 100%;
+  border-radius: 10px;
+}
+
+.video-buttons {
+  margin-top: 1rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  justify-content: center;
+}
+
+.video-buttons button {
+  padding: 0.5rem 1rem;
+  border: none;
+  background: #4f46e5;
+  color: white;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.simulator {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+}
+
+.chart-container {
+  width: 100%;
+  max-width: 700px;
+  height: 350px;
+}
+
+.controls {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+}
+
+.btn-buy {
+  background: #22c55e;
+  color: white;
+  border: none;
+  padding: 0.5rem 1rem;
+}
+
+.btn-sell {
+  background: #ef4444;
+  color: white;
+  border: none;
+  padding: 0.5rem 1rem;
+}
+
+.footer {
+  background: #1e1e2f;
+  color: white;
+  text-align: center;
+  padding: 1.5rem;
+  margin-top: 2rem;
+}
