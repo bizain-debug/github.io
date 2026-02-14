@@ -23,27 +23,45 @@
     <label class="switch">
   <input type="checkbox" id="themeToggle">
   <span class="slider"></span>
-    </label>
+</label>
   </nav>
 </header>
-
 <main>
-  <section id="home" class="hero">
-    <div class="hero-content">
-      <h2>Belajar Trading dari Nol sampai Paham</h2>
-      <p>Belajar santai, gak ribet, gak sok jago 😏</p>
-      <a href="education.html" class="btn-primary">Mulai Belajar</a>
+  <section class="education">
+    <h2>Video Edukasi (Tahap 1 - 8)</h2>
+
+    <div class="video-wrapper">
+      <iframe id="videoPlayer" src="https://www.youtube.com/embed/pOPd5nfcAVU" allowfullscreen></iframe>
     </div>
+
+    <!-- Tombol Pilih Tahap -->
+<div class="video-buttons" id="stageButtons">
+  <button data-stage="1">Tahap 1</button>
+  <button data-stage="2">Tahap 2</button>
+  <button data-stage="3">Tahap 3</button>
+  <button data-stage="4">Tahap 4</button>
+  <button data-stage="5">Tahap 5</button>
+  <button data-stage="6">Tahap 6</button>
+  <button data-stage="7">Tahap 7</button>
+  <button data-stage="8">Tahap 8</button>
+</div>
+
+<!-- Daftar Episode -->
+<div class="video-buttons" id="episodeButtons" style="display:none;">
+  <!-- episode muncul di sini -->
+</div>
+
+<!-- Tombol Kembali -->
+<div style="margin-top: 1rem;">
+  <button id="backBtn" style="display:none;" class="btn-primary">⬅ Kembali</button>
+</div>
+
+    <p class="note">mari bersama kita jadi trader yg profitable 🤝</p>
   </section>
 </main>
-
 <footer class="footer">
   <p>© 2026 Sekolah Market.</p>
 </footer>
-
 <script src="script.js"></script>
-<marquee>
-  <h1>MARI BERSAMA MENGUASAI MARKET!!</h1>
-</marquee>
 </body>
 </html>
