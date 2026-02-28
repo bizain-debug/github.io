@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <title>Trading Journal - Sekolah Market</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="header">
+  <nav class="nav">
+    <h1>Sekolah Market</h1>
+    <ul class="nav-menu">
+      <li><a href="index.html">Beranda</a></li>
+      <li><a href="education.html">Edukasi</a></li>
+      <li><a href="artikel.html">Artikel</a></li>
+      <li><a href="simulator.html">Simulator</a></li>
+      <li><a href="journal.html">Journal</a></li>
+    </ul>
+      <label class="switch">
+      <input type="checkbox" id="themeToggle">
+      <span class="slider"></span>
+      </label>
+    </nav>
+</header>
+
+<main class="platform">
+
+  <h2>Trading Journal</h2>
+
+  <form id="journalForm">
+    <input type="text" id="pair" placeholder="Pair (EURUSD)" required>
+    <input type="number" id="risk" placeholder="Risk (%)" required>
+    <select id="result">
+      <option value="Win">Win</option>
+      <option value="Loss">Loss</option>
+    </select>
+    <textarea id="note" placeholder="Catatan..."></textarea>
+    <button type="submit">Simpan Trade</button>
+  </form>
+
+  <div id="journalList"></div>
+
+</main>
+
+<script src="journal.js"></script>
+</body>
+</html>
