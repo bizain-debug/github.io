@@ -514,27 +514,29 @@ body.dark .option-box {
   background-color: #3b3b55;
 }
 
-/* ===================== Responsive Fixes & Vertical Screen ===================== */
+/* ===================== FIX VERTICAL SCREEN ===================== */
 
-/* Chart & Video Responsive */
+/* Chart & Video responsive tinggi menyesuaikan viewport */
 .chart-container {
     width: 100%;
-    height: auto; /* auto supaya responsive */
-    aspect-ratio: 2 / 1; /* proporsional horizontal/vertical */
     max-width: 700px;
+    height: auto;
+    aspect-ratio: 2 / 1;
+    max-height: 50vh; /* tinggi proporsional layar */
 }
 
 .video-wrapper {
     width: 100%;
+    max-width: 800px;
     height: auto;
     aspect-ratio: 16 / 9;
-    max-width: 800px;
+    max-height: 45vh; /* tinggi proporsional layar */
 }
 
 /* Trade history & balance box responsive */
 .trade-history-box,
 .balance-box {
-    width: 90%;
+    width: 95%;
     max-width: 700px;
 }
 
@@ -544,21 +546,20 @@ body.dark .option-box {
     gap: 1rem;
 }
 
-/* Media Queries untuk layar lebih kecil */
+/* Media query layar tablet & HP */
 @media (max-width: 768px) {
-    .chart-container {
-        aspect-ratio: 16 / 9;
-        height: auto;
-    }
+    .chart-container,
     .video-wrapper {
-        aspect-ratio: 16 / 9;
-        max-width: 100%;
+        max-height: 40vh;
     }
 }
 
 @media (max-width: 480px) {
     .chart-container,
-    .video-wrapper,
+    .video-wrapper {
+        max-height: 35vh; /* vertical screen kecil tetap proporsional */
+    }
+
     .trade-history-box,
     .balance-box {
         width: 95%;
@@ -568,4 +569,4 @@ body.dark .option-box {
         grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
         gap: 0.8rem;
     }
-  }
+}
