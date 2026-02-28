@@ -1,99 +1,405 @@
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+* {  
+  margin: 0;  
+  padding: 0;  
+  box-sizing: border-box;  
+}  
+  
+body {  
+  font-family: 'Inter', sans-serif;  
+  background: #f8f9fa;  
+  color: #222;  
+  transition: 0.3s;  
+}  
+  
+body.dark {  
+  background: #121212;  
+  color: #e0e0e0;  
+}  
+  
+.header {  
+  background: #1e1e2f;  
+  color: white;  
+  padding: 1rem 2rem;  
+}  
+  
+.nav {  
+  display: flex;  
+  justify-content: space-between;  
+  align-items: center;  
+}  
+  
+.nav-menu {  
+  list-style: none;  
+  display: flex;  
+  gap: 1rem;  
+}  
+  
+.nav-menu a {  
+  color: white;  
+  text-decoration: none;  
+}  
+  
+.theme-toggle {  
+  font-size: 1.2rem;  
+  background: none;  
+  border: none;  
+  color: white;  
+  cursor: pointer;  
+}  
+  
+.hero {  
+  padding: 3rem 2rem;  
+  text-align: center;  
+}  
+  
+.btn-primary {  
+  display: inline-block;  
+  margin-top: 1rem;  
+  padding: 0.7rem 1.2rem;  
+  background: #4f46e5;  
+  color: white;  
+  text-decoration: none;  
+  border-radius: 6px;  
+}  
+  
+.education, .platform {  
+  padding: 3rem 2rem;  
+  text-align: center;  
+}  
+  
+.video-wrapper {  
+  margin: 1rem auto;  
+  max-width: 800px;  
+  aspect-ratio: 16 / 9;  
+}  
+  
+.video-wrapper iframe {  
+  width: 100%;  
+  height: 100%;  
+  border-radius: 10px;  
+}  
+  
+.video-buttons {  
+  margin-top: 1rem;  
+  display: flex;  
+  flex-wrap: wrap;  
+  gap: 0.5rem;  
+  justify-content: center;  
+}  
+  
+.video-buttons button {  
+  padding: 0.5rem 1rem;  
+  border: none;  
+  background: #4f46e5;  
+  color: white;  
+  border-radius: 5px;  
+  cursor: pointer;  
+}  
+  
+.simulator {  
+  display: flex;  
+  flex-direction: column;  
+  align-items: center;  
+  gap: 1rem;  
+}  
+  
+.chart-container {  
+  width: 100%;  
+  max-width: 700px;  
+  height: 350px;  
+}  
+  
+.controls {  
+  display: flex;  
+  gap: 1rem;  
+  align-items: center;  
+}  
+  
+.btn-buy {  
+  background: #22c55e;  
+  color: white;  
+  border: none;  
+  padding: 0.5rem 1rem;  
+}  
+  
+.btn-sell {  
+  background: #ef4444;  
+  color: white;  
+  border: none;  
+  padding: 0.5rem 1rem;  
+}  
+  
+.footer {  
+  background: #1e1e2f;  
+  color: white;  
+  text-align: center;  
+  padding: 1.5rem;  
+  margin-top: 2rem;  
+}  
+  
+.switch-vertical {  
+  position: relative;  
+  display: inline-block;  
+  width: 40px;  
+  height: 70px;  
+}  
+  
+.switch-vertical input {  
+  opacity: 0;  
+  width: 0;  
+  height: 0;  
+}  
+  
+.slider-vertical {  
+  position: absolute;  
+  cursor: pointer;  
+  top: 0;  
+  left: 0;  
+  right: 0;  
+  bottom: 0;  
+  background-color: #ccc;  
+  border-radius: 20px;  
+  transition: 0.3s;  
+}  
+  
+.slider-vertical::before {  
+  position: absolute;  
+  content: "";  
+  width: 30px;  
+  height: 30px;  
+  left: 5px;  
+  bottom: 5px;  
+  background-color: white;  
+  border-radius: 50%;  
+  transition: 0.3s;  
+}  
+  
+/* Switch Dark Mode */  
+.switch {  
+  position: relative;  
+  display: inline-block;  
+  width: 50px;  
+  height: 25px;  
+}  
+  
+.switch input {  
+  opacity: 0;  
+  width: 0;  
+  height: 0;  
+}  
+  
+.slider {  
+  position: absolute;  
+  cursor: pointer;  
+  top: 0; left: 0; right: 0; bottom: 0;  
+  background-color: #ccc;  
+  transition: .3s;  
+  border-radius: 26px;  
+}  
+  
+.slider:before {  
+  position: absolute;  
+  content: "";  
+  height: 20px;  
+  width: 20px;  
+  left: 3px;  
+  bottom: 3px;  
+  background-color: white;  
+  transition: .3s;  
+  border-radius: 50%;  
+}  
+  
+input:checked + .slider {  
+  background-color: #4f46e5;  
+}  
+  
+input:checked + .slider:before {  
+  transform: translateX(24px);  
+}  
+  
+.article-card {  
+  background: white;  
+  padding: 1.5rem;  
+  margin: 1rem auto;  
+  max-width: 700px;  
+  border-radius: 10px;  
+  box-shadow: 0 5px 15px rgba(0,0,0,0.05);  
+  text-align: left;  
+}  
+  
+body.dark .article-card {  
+  background: #1e1e2f;  
+}  
+  
+.article-card h3 {  
+  margin-bottom: 0.5rem;  
+  color: #4f46e5;  
+}  
+  
+@media (max-width: 768px) {  
+  .nav {  
+    flex-direction: column;  
+    align-items: flex-start;  
+    gap: 1rem;  
+  }  
+  
+  .nav-menu {  
+    flex-wrap: wrap;  
+    gap: 0.8rem;  
+  }  
+}  
+  
+.platform ul {  
+  list-style: none;  
+  padding-left: 0;  
 }
-
-body {
-  font-family: 'Inter', sans-serif;
-  background: #f8f9fa;
-  color: #222;
-  transition: 0.3s;
-}
-
+  
 body.dark {
   background: #121212;
   color: #e0e0e0;
 }
 
-.header {
-  background: #1e1e2f;
+body.dark input,
+body.dark textarea,
+body.dark select {
+  background-color: #1e1e1e;
   color: white;
-  padding: 1rem 2rem;
+  border: 1px solid #444;
 }
 
-.nav {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+body.dark .article-card {
+  background: #1e1e2f;
 }
 
-.nav-menu {
-  list-style: none;
+/* FORM JOURNAL */
+#journalForm {
+  max-width: 700px;
+  margin: 2rem auto;
+  padding: 2rem;
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.05);
   display: flex;
+  flex-direction: column;
   gap: 1rem;
 }
 
-.nav-menu a {
-  color: white;
-  text-decoration: none;
+/* DARK MODE FORM */
+body.dark #journalForm {
+  background: #1e1e2f;
 }
 
-.theme-toggle {
-  font-size: 1.2rem;
-  background: none;
-  border: none;
-  color: white;
-  cursor: pointer;
+/* JOURNAL LIST */
+#journalList {
+  max-width: 700px;
+  margin: 2rem auto;
 }
 
-.hero {
-  padding: 3rem 2rem;
-  text-align: center;
-}
-
-.btn-primary {
-  display: inline-block;
-  margin-top: 1rem;
-  padding: 0.7rem 1.2rem;
-  background: #4f46e5;
-  color: white;
-  text-decoration: none;
-  border-radius: 6px;
-}
-
-.education, .platform {
-  padding: 3rem 2rem;
-  text-align: center;
-}
-
-.video-wrapper {
-  margin: 1rem auto;
-  max-width: 800px;
-  aspect-ratio: 16 / 9;
-}
-
-.video-wrapper iframe {
-  width: 100%;
-  height: 100%;
+/* CARD TRADE */
+.trade-card {
+  background: white;
+  padding: 1.5rem;
+  margin-bottom: 1rem;
   border-radius: 10px;
+  text-align: left;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.05);
 }
 
-.video-buttons {
-  margin-top: 1rem;
+body.dark .trade-card {
+  background: #1e1e2f;
+}
+
+/* FORM JOURNAL */
+#journalForm {
+  max-width: 800px;      /* lebih lebar biar gak dempet */
+  margin: 3rem auto;     /* kasih jarak atas bawah */
+  padding: 2.5rem;       /* lebih lega di dalam */
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 5px 20px rgba(0,0,0,0.1);
   display: flex;
-  flex-wrap: wrap;
-  gap: 0.5rem;
-  justify-content: center;
+  flex-direction: column;
+  gap: 1.5rem;           /* jarak antar input lebih lega */
+  font-size: 18px;       /* teks lebih gede */
 }
 
-.video-buttons button {
-  padding: 0.5rem 1rem;
-  border: none;
-  background: #4f46e5;
+/* INPUT, TEXTAREA, SELECT */
+#journalForm input,
+#journalForm textarea,
+#journalForm select {
+  font-size: 18px;       /* tulisan gede */
+  padding: 12px 15px;    /* padding lebih nyaman */
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+/* TEXTAREA AGAK BESAR */
+#journalForm textarea {
+  min-height: 120px;     /* lebih tinggi biar lega */
+  resize: vertical;      /* boleh resize vertical */
+}
+
+/* BUTTON */
+#journalForm button {
+  font-size: 18px;
+  padding: 12px 0;
+  border-radius: 8px;
+  background-color: #4f46e5;
   color: white;
-  border-radius: 5px;
   cursor: pointer;
+  border: none;
+  transition: 0.3s;
+}
+
+#journalForm button:hover {
+  background-color: #4338ca;
+}
+
+#tradeHistory {
+  max-width: 700px;
+  margin: 1.5rem auto 3rem auto;
+  font-size: 16px;
+}
+
+.trade-entry {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.6rem 1rem;
+  margin-bottom: 0.5rem;
+  border-radius: 8px;
+  background-color: #f3f4f6;
+  transition: 0.2s;
+}
+
+.trade-entry.buy {
+  border-left: 5px solid #22c55e;
+}
+
+.trade-entry.sell {
+  border-left: 5px solid #ef4444;
+}
+
+.trade-entry button {
+  background: #ef4444;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  padding: 3px 7px;
+  cursor: pointer;
+  font-size: 14px;
+  transition: 0.2s;
+}
+
+.trade-entry button:hover {
+  background: #dc2626;
+}
+
+body.dark #tradeHistory .trade-entry {
+  background-color: #1e1e2f;
+  color: white;
 }
 
 .simulator {
@@ -101,118 +407,109 @@ body.dark {
   flex-direction: column;
   align-items: center;
   gap: 1rem;
+  position: relative;
 }
 
+/* Balance Box */
+.balance-box {
+  background: #7c3aed66;
+  color: black;
+  font-weight: bold;
+  padding: 12px 20px;
+  border-radius: 10px;
+  min-width: 250px;
+  text-align: center;
+  margin-bottom: 10px;
+  transition: color 0.3s;
+}
+
+/* Chart Container */
 .chart-container {
   width: 100%;
   max-width: 700px;
   height: 350px;
+  position: relative;
 }
 
-.controls {
+/* Trade History Box */
+.trade-history-box {
+  background: #7c3aed66;
+  color: black;
+  padding: 10px 15px;
+  border-radius: 8px;
+  max-height: 250px;
+  overflow-y: auto;
+  margin-top: 10px;
+}
+
+/* Floating Buttons */
+.floating-buttons {
   display: flex;
-  gap: 1rem;
-  align-items: center;
+  justify-content: center;
+  gap: 15px;
+  margin-top: 15px;
 }
 
-.btn-buy {
-  background: #22c55e;
-  color: white;
+/* Buy/Sell Buttons */
+.floating-buttons button {
+  padding: 10px 20px;
+  font-weight: bold;
   border: none;
-  padding: 0.5rem 1rem;
+  border-radius: 8px;
+  cursor: pointer;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.2);
+  transition: transform 0.2s;
 }
 
-.btn-sell {
-  background: #ef4444;
-  color: white;
-  border: none;
-  padding: 0.5rem 1rem;
+.floating-buttons button:hover {
+  transform: translateY(-2px);
 }
 
+.btn-buy { background-color: #10b981; color: white; }
+.btn-sell { background-color: #ef4444; color: white; }
+
+/* Footer spacing supaya tombol ga nabrak */
 .footer {
-  background: #1e1e2f;
-  color: white;
+  padding: 20px 0;
+  margin-top: 80px;
   text-align: center;
-  padding: 1.5rem;
+}
+
+/* Smooth animation untuk Chart Line */
+canvas {
+  transition: all 0.8s ease-in-out;
+}
+
+/* Learning Options */
+.learning-options {
+  padding: 3rem 2rem;
+  text-align: center;
+}
+
+.options-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 1.5rem;
   margin-top: 2rem;
 }
 
-.switch-vertical {
-  position: relative;
-  display: inline-block;
-  width: 40px;
-  height: 70px;
-}
-
-.switch-vertical input {
-  opacity: 0;
-  width: 0;
-  height: 0;
-}
-
-.slider-vertical {
-  position: absolute;
+.option-box {
+  background-color: #2a2a3f; /* sedikit lebih terang dari header */
+  color: white;
+  padding: 2rem 1rem;
+  border-radius: 12px;
+  font-size: 1.2rem;
+  font-weight: bold;
   cursor: pointer;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background-color: #ccc;
-  border-radius: 20px;
-  transition: 0.3s;
+  transition: transform 0.2s, background-color 0.3s;
 }
 
-.slider-vertical::before {
-  position: absolute;
-  content: "";
-  width: 30px;
-  height: 30px;
-  left: 5px;
-  bottom: 5px;
-  background-color: white;
-  border-radius: 50%;
-  transition: 0.3s;
+.option-box:hover {
+  transform: translateY(-5px);
+  background-color: #4f46e5; /* biar interaktif */
 }
 
-/* Switch Dark Mode */
-.switch {
-  position: relative;
-  display: inline-block;
-  width: 80px;
-  height: 25px;
-}
-
-.switch input {
-  opacity: 0;
-  width: 0;
-  height: 0;
-}
-
-.slider {
-  position: absolute;
-  cursor: pointer;
-  top: 0; left: 0; right: 0; bottom: 0;
-  background-color: #ccc;
-  transition: .3s;
-  border-radius: 26px;
-}
-
-.slider:before {
-  position: absolute;
-  content: "";
-  height: 20px;
-  width: 20px;
-  left: 3px;
-  bottom: 3px;
-  background-color: white;
-  transition: .3s;
-  border-radius: 50%;
-}
-
-input:checked + .slider {
-  background-color: #4f46e5;
-}
-
-input:checked + .slider:before {
-  transform: translateX(24px);
+/* Dark Mode */
+body.dark .option-box {
+  background-color: #3b3b55;
   }
