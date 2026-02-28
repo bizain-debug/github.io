@@ -514,59 +514,48 @@ body.dark .option-box {
   background-color: #3b3b55;
 }
 
-/* ===================== FIX VERTICAL SCREEN ===================== */
-
-/* Chart & Video responsive tinggi menyesuaikan viewport */
-.chart-container {
-    width: 100%;
-    max-width: 700px;
-    height: auto;
-    aspect-ratio: 2 / 1;
-    max-height: 50vh; /* tinggi proporsional layar */
-}
-
-.video-wrapper {
-    width: 100%;
-    max-width: 800px;
-    height: auto;
-    aspect-ratio: 16 / 9;
-    max-height: 45vh; /* tinggi proporsional layar */
-}
-
-/* Trade history & balance box responsive */
-.trade-history-box,
-.balance-box {
-    width: 95%;
-    max-width: 700px;
-}
-
-/* Learning options responsive */
-.options-container {
-    grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
-    gap: 1rem;
-}
-
-/* Media query layar tablet & HP */
+/* --- Fix Jurnal & Card Vertikal Mode --- */
 @media (max-width: 768px) {
-    .chart-container,
-    .video-wrapper {
-        max-height: 40vh;
-    }
+  #journalForm,
+  .trade-card,
+  .article-card,
+  #tradeHistory {
+    max-width: 95%;       /* ambil hampir semua lebar layar */
+    margin-left: auto;
+    margin-right: auto;
+    padding: 1.5rem;      /* biar lega di layar sempit */
+    font-size: 16px;      /* teks tetap nyaman dibaca */
+  }
+
+  .balance-box {
+    min-width: auto;      /* biar balance box bisa menyesuaikan layar */
+    width: 90%;
+  }
+
+  .chart-container {
+    height: auto;         /* biar chart responsive vertikal */
+  }
+
+  .video-wrapper {
+    width: 90%;           /* video responsive vertical */
+    aspect-ratio: 16 / 9; /* tetap proporsional */
+  }
 }
 
 @media (max-width: 480px) {
-    .chart-container,
-    .video-wrapper {
-        max-height: 35vh; /* vertical screen kecil tetap proporsional */
-    }
+  #journalForm,
+  .trade-card,
+  .article-card,
+  #tradeHistory {
+    font-size: 14px;      /* teks sedikit lebih kecil tapi readable */
+    padding: 1rem;
+  }
 
-    .trade-history-box,
-    .balance-box {
-        width: 95%;
-    }
+  .balance-box {
+    width: 95%;
+  }
 
-    .options-container {
-        grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
-        gap: 0.8rem;
-    }
+  .video-wrapper {
+    width: 95%;
+  }
 }
