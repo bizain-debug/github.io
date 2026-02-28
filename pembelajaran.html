@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Pilihan Pembelajaran - Sekolah Market</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="header">
+  <nav class="nav">
+    <h1>Sekolah Market</h1>
+    <ul class="nav-menu">
+      <li><a href="index.html">Beranda</a></li>
+      <li><a href="education.html">Edukasi</a></li>
+      <li><a href="simulator.html">Simulator</a></li>
+      <li><a href="artikel.html">Artikel</a></li>
+      <li><a href="journal.html">Journal</a></li>
+    </ul>
+
+    <label class="switch">
+      <input type="checkbox" id="themeToggle">
+      <span class="slider"></span>
+    </label>
+
+  </nav>
+</header>
+
+<main>
+  <section class="learning-options">
+    <h2>Pilih Cara Belajar</h2>
+    <div class="options-container">
+      <div class="option-box" data-link="education.html">Edukasi</div>
+      <div class="option-box" data-link="simulator.html">Simulator Trading</div>
+      <div class="option-box" data-link="artikel.html">Artikel</div>
+      <div class="option-box" data-link="journal.html">Jurnal</div>
+    </di>
+  </section>
+</main>
+
+<footer class="footer">
+  <p>© 2026 Sekolah Market.</p>
+</footer>
+
+<script>
+  // Klik kotak langsung pindah halaman
+  document.querySelectorAll('.option-box').forEach(box => {
+    box.addEventListener('click', () => {
+      const link = box.dataset.link;
+      if(link) window.location.href = link;
+    });
+  });
+
+  // Theme toggle
+  const themeToggle = document.getElementById("themeToggle");
+  if(themeToggle && localStorage.getItem("theme")==="dark"){
+    document.body.classList.add("dark");
+    themeToggle.checked = true;
+  }
+  if(themeToggle){
+    themeToggle.addEventListener("change",()=>{
+      document.body.classList.toggle("dark");
+      localStorage.setItem("theme", document.body.classList.contains("dark")?"dark":"light");
+    });
+  }
+</script>
+
+</body>
+</html>
