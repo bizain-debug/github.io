@@ -4,59 +4,65 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Sekolah Market - Edukasi Trading</title>
-  <meta name="description" content="Platform edukasi trading dari dasar sampai mahir dengan mindset dan simulator.">
+  <meta name="description" content="Platform edukasi trading dengan video dari tahap 1-8 dan simulator sederhana.">
   <link rel="stylesheet" href="style.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
 </head>
-
 <body>
 
 <header class="header">
   <nav class="nav">
     <h1>Sekolah Market</h1>
     <ul class="nav-menu">
-      <li><a href="index.html">Beranda</a></li>
-      <li><a href="education.html">Edukasi</a></li>
-      <li><a href="simulator.html">Simulator</a></li>
-      <li><a href="artikel.html">Artikel</a></li>
-      <li><a href="journal.html">Journal</a></li>
+  <li><a href="index.html">Beranda</a></li>
+  <li><a href="education.html">Edukasi</a></li>
+  <li><a href="simulator.html">Simulator</a></li>
+  <li><a href="artikel.html">Artikel</a></li>
+  <li><a href="journal.html">Journal</a></li>
     </ul>
-
     <label class="switch">
-      <input type="checkbox" id="themeToggle">
-      <span class="slider"></span>
-    </label>
-
+  <input type="checkbox" id="themeToggle">
+  <span class="slider"></span>
+</label>
   </nav>
 </header>
-
 <main>
+  <section class="education">
+    <h2>Video Edukasi (Tahap 1 - 8)</h2>
 
-<section class="hero">
-  <div class="hero-content">
-    <h2>Bangun Skill. Bangun Disiplin. Bangun Profit.</h2>
-    <p>Belajar trading dari nol sampai punya sistem yang konsisten dan terkontrol.</p>
-    <a href="pembelajaran.html" class="btn-primary">Mulai Belajar</a>
-  </div>
-</section>
+    <div class="video-wrapper">
+      <iframe id="videoPlayer" src="https://www.youtube.com/embed/pOPd5nfcAVU" allowfullscreen></iframe>
+    </div>
 
-<section class="platform">
-  <h2>Fokus Pembelajaran</h2>
-  <ul style="margin-top:1rem;">
-    <li>Trend Following</li>
-    <li>Support & Resistance</li>
-    <li>Risk Management</li>
-    <li>Psikologi Trading</li>
-  </ul>
-</section>
+    <!-- Tombol Pilih Tahap -->
+<div class="video-buttons" id="stageButtons">
+  <button data-stage="1">Tahap 1</button>
+  <button data-stage="2">Tahap 2</button>
+  <button data-stage="3">Tahap 3</button>
+  <button data-stage="4">Tahap 4</button>
+  <button data-stage="5">Tahap 5</button>
+  <button data-stage="6">Tahap 6</button>
+  <button data-stage="7">Tahap 7</button>
+  <button data-stage="8">Tahap 8</button>
+</div>
 
+<!-- Daftar Episode -->
+<div class="video-buttons" id="episodeButtons" style="display:none;">
+  <!-- episode muncul di sini -->
+</div>
+
+<!-- Tombol Kembali -->
+<div style="margin-top: 1rem;">
+  <button id="backBtn" style="display:none;" class="btn-primary">⬅ Kembali</button>
+</div>
+
+    <p class="note">mari bersama kita jadi trader yg profitable 🤝</p>
+  </section>
 </main>
-
 <footer class="footer">
   <p>© 2026 Sekolah Market.</p>
 </footer>
-
 <script src="script.js"></script>
 </body>
 </html>
