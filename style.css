@@ -512,7 +512,7 @@ canvas {
 /* Dark Mode */
 body.dark .option-box {
   background-color: #3b3b55;
-  }
+}
 
 /* ===================== Responsive Fixes & Vertical Screen ===================== */
 
@@ -568,4 +568,4 @@ body.dark .option-box {
         grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
         gap: 0.8rem;
     }
-}
+  }
