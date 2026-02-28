@@ -19,6 +19,8 @@
   <li><a href="index.html">Beranda</a></li>
   <li><a href="education.html">Edukasi</a></li>
   <li><a href="simulator.html">Simulator</a></li>
+  <li><a href="artikel.html">Artikel</a></li>
+  <li><a href="journal.html">Journal</a></li>
     </ul>
     <label class="switch">
   <input type="checkbox" id="themeToggle">
@@ -27,20 +29,29 @@
   </nav>
 </header>
 <main>
-  <section class="platform">
-    <h2>Simulator Trading (Sederhana)</h2>
-    <div class="simulator">
-      <div class="chart-container">
-        <canvas id="tradingChart"></canvas>
-      </div>
-      <div class="controls">
-        <button id="buyBtn" class="btn-buy">Beli</button>
-        <button id="sellBtn" class="btn-sell">Jual</button>
-        <p id="balance">Saldo: $10,000</p>
-        <p id="position">Posisi: Tidak ada</p>
-      </div>
+
+<section class="platform">
+  <h2>Simulator Trading (Sederhana)</h2>
+  <div class="simulator">
+    <!-- Balance / P&L -->
+    <div class="balance-box" id="balanceBox">Saldo: $10,000 | Floating P/L: $0</div>
+
+    <!-- Chart -->
+    <div class="chart-container">
+      <canvas id="tradingChart"></canvas>
     </div>
-  </section>
+
+    <!-- Trade History -->
+    <div class="trade-history-box" id="tradeHistoryBox"></div>
+
+    <!-- Floating Buttons Beli / Jual -->
+    <div class="floating-buttons">
+      <button id="buyBtn" class="btn-buy">Beli</button>
+      <button id="sellBtn" class="btn-sell">Jual</button>
+    </div>
+  </div>
+</section>
+
 </main>
 <footer class="footer">
   <p>© 2026 Sekolah Market.</p>
