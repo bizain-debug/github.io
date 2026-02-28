@@ -513,3 +513,59 @@ canvas {
 body.dark .option-box {
   background-color: #3b3b55;
   }
+
+/* ===================== Responsive Fixes & Vertical Screen ===================== */
+
+/* Chart & Video Responsive */
+.chart-container {
+    width: 100%;
+    height: auto; /* auto supaya responsive */
+    aspect-ratio: 2 / 1; /* proporsional horizontal/vertical */
+    max-width: 700px;
+}
+
+.video-wrapper {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 16 / 9;
+    max-width: 800px;
+}
+
+/* Trade history & balance box responsive */
+.trade-history-box,
+.balance-box {
+    width: 90%;
+    max-width: 700px;
+}
+
+/* Learning options responsive */
+.options-container {
+    grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+    gap: 1rem;
+}
+
+/* Media Queries untuk layar lebih kecil */
+@media (max-width: 768px) {
+    .chart-container {
+        aspect-ratio: 16 / 9;
+        height: auto;
+    }
+    .video-wrapper {
+        aspect-ratio: 16 / 9;
+        max-width: 100%;
+    }
+}
+
+@media (max-width: 480px) {
+    .chart-container,
+    .video-wrapper,
+    .trade-history-box,
+    .balance-box {
+        width: 95%;
+    }
+
+    .options-container {
+        grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+        gap: 0.8rem;
+    }
+}
