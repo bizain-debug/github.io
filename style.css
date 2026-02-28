@@ -514,48 +514,44 @@ body.dark .option-box {
   background-color: #3b3b55;
 }
 
-/* --- Fix Jurnal & Card Vertikal Mode --- */
+/* FORM JOURNAL & LIST RESPONSIVE FIX */
+#journalForm, #journalList {
+  width: 90%;
+  margin: 2rem auto;
+}
+
+#journalForm input,
+#journalForm textarea,
+#journalForm select,
+#journalForm button {
+  width: 100%;
+  font-size: 18px;
+}
+
+/* CARD TRADE RESPONSIVE */
+.trade-card {
+  width: 100%;
+  margin: 1rem auto;
+}
+
 @media (max-width: 768px) {
-  #journalForm,
-  .trade-card,
-  .article-card,
-  #tradeHistory {
-    max-width: 95%;       /* ambil hampir semua lebar layar */
-    margin-left: auto;
-    margin-right: auto;
-    padding: 1.5rem;      /* biar lega di layar sempit */
-    font-size: 16px;      /* teks tetap nyaman dibaca */
-  }
-
-  .balance-box {
-    min-width: auto;      /* biar balance box bisa menyesuaikan layar */
-    width: 90%;
-  }
-
-  .chart-container {
-    height: auto;         /* biar chart responsive vertikal */
-  }
-
-  .video-wrapper {
-    width: 90%;           /* video responsive vertical */
-    aspect-ratio: 16 / 9; /* tetap proporsional */
+  #journalForm, .trade-card, #journalList {
+    width: 95%;
+    margin: 1.5rem auto;
+    font-size: 16px;
   }
 }
 
-@media (max-width: 480px) {
-  #journalForm,
-  .trade-card,
-  .article-card,
-  #tradeHistory {
-    font-size: 14px;      /* teks sedikit lebih kecil tapi readable */
-    padding: 1rem;
+@media (orientation: landscape) {
+  #journalForm, #journalList, .trade-card {
+    max-width: 95%;
+    margin: 1rem auto;
   }
+}
 
-  .balance-box {
+@media (orientation: portrait) {
+  #journalForm, #journalList, .trade-card {
     width: 95%;
-  }
-
-  .video-wrapper {
-    width: 95%;
+    margin: 1rem auto;
   }
 }
